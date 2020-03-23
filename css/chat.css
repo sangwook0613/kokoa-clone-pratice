@@ -1,5 +1,6 @@
 .header-wrapper {
   position: fixed; /*헤더 고정*/
+  z-index: 2;
   top: 0px;
   width: 100%;
   padding: 5px 0px;
@@ -64,7 +65,7 @@
   border: none;
   font-size: 14px;
   transition: width 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
-    0.5s ease-in-out, transform 0.5s ease-in-out;
+    border-radius 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .chat__write:focus {
@@ -148,6 +149,15 @@
   align-self: flex-end;
 }
 
+@keyframes spin {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
 .incoming-message img {
   width: 45px;
   border-radius: 15px;
@@ -155,6 +165,7 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
     rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
+  animation: spin 1s linear infinite;
 }
 
 .message .message__bubble {
